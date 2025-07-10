@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Élégance Couture | Koleksi Fashion Mewah</title>
+  <style>
+    :root {
+      --primary: #000000;
+      --secondary: #D4AF37;
+      --light: #ffffff;
+      --dark: #1a1a1a;
+      --gray: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* Default font for body and general text */
+      font-family: 'Lora', serif; /* Changed to Lora for body text */
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: var(--light);
+      padding: 1rem 5% 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 2px;
+      font-family: 'Playfair Display', serif; /* Specific font for logo */
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    .nav-links-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    .nav-main-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-category-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    /* Media queries untuk nav-links */
+    @media (max-width: 992px) {
+      .nav-main-links, .nav-category-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .nav-main-links, .nav-category-links {
+        gap: 0.75rem;
+      }
+    }
+
+
+    .nav-links-wrapper a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-family: 'Lora', serif; /* Specific font for nav links */
+    }
+
+    .nav-links-wrapper a:hover {
+      color: var(--secondary);
+    }
+
+    .cart-icon {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 80vh;
+      min-height: 500px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/Users/user/Desktop/WhatsApp Image 2025-07-10 at 12.18.42.jpeg') no-repeat center center;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--light);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      font-family: 'Playfair Display', serif; /* Specific font for hero title */
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      font-family: 'Lora', serif; /* Specific font for hero paragraph */
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background-color: var(--secondary);
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 0;
+      transition: all 0.3s;
+      border: 2px solid var(--secondary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: 'Lora', serif; /* Specific font for buttons */
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      margin-left: 1rem;
+      border-color: var(--light);
+      color: var(--light);
+    }
+
+    .btn:hover {
+      background-color: transparent;
+      color: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--secondary);
+      color: var(--light);
+      border-color: var(--secondary);
+    }
+
+    /* Featured Collection */
+    .collection {
+      padding: 5rem 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+      font-family: 'Playfair Display', serif; /* Specific font for section titles */
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background-color: var(--secondary);
+      bottom: -10px;
+      left: 25%;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    @media (max-width: 480px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .product-card {
+      background-color: var(--light);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer; /* Add cursor pointer to indicate clickability */
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .product-image {
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: var(--secondary);
+      color: var(--light);
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Lora', serif; /* Specific font for badges */
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif; /* Specific font for product titles */
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-family: 'Lora', serif; /* Specific font for product prices */
+    }
+
+    .product-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .wishlist-btn {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .wishlist-btn.active {
+      color: #ff3366;
+    }
+
+    .add-to-cart {
+      padding: 0.5rem 1.5rem;
+      background-color: var(--primary);
+      color: var(--light);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: 'Lora', serif; /* Specific font for add to cart button */
+    }
+
+    .add-to-cart:hover {
+      background-color: var(--secondary);
+    }
+
+    /* Reviews and Ratings */
+    .product-rating {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+    .product-rating .stars {
+      color: var(--secondary);
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
+    .product-rating .review-count {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 3rem 5%;
+      text-align: center;
+    }
+
+    .newsletter h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif; /* Specific font for newsletter title */
+    }
+
+    .newsletter p {
+      margin-bottom: 2rem;
+      opacity: 0.8;
+      font-family: 'Lora', serif; /* Specific font for newsletter paragraph */
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border: none;
+      outline: none;
+      font-family: 'Lora', serif; /* Specific font for form input */
+    }
+
+    .newsletter-form button {
+      padding: 0 1.5rem;
+      background-color: var(--secondary);
+      color: var(--light);
+      border: none;
+      cursor: pointer;
+      font-family: 'Lora', serif; /* Specific font for form button */
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 3rem 5%;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+    @media (max-width: 480px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+      margin-bottom: 2rem;
+    }
+
+    .footer-column h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+      font-family: 'Playfair Display', serif; /* Specific font for footer titles */
+    }
+
+    .footer-column h4::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background-color: var(--secondary);
+      bottom: 0;
+      left: 0;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-column ul li a {
+      color: var(--light);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+      font-family: 'Lora', serif; /* Specific font for footer links */
+    }
+
+    .footer-column ul li a:hover {
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.7;
+      font-family: 'Lora', serif; /* Specific font for footer bottom text */
+    }
+
+    /* Cart Modal Styles */
+    .cart-modal, .product-detail-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      overflow: auto; /* Enable scrolling for modal content */
+    }
+
+    .cart-content, .product-detail-content {
+      background-color: var(--light);
+      margin: 5% auto;
+      padding: 2rem;
+      width: 90%;
+      max-width: 800px; /* Increased max-width for product detail */
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .close-cart, .close-product-detail {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .cart-items {
+      max-height: 400px;
+      overflow-y: auto;
+      margin: 1rem 0;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+      font-size: 1rem;
+      font-family: 'Lora', serif; /* Specific font for cart items */
+    }
+
+    .cart-item .item-name {
+      flex: 2;
+    }
+
+    .cart-item .item-price {
+      flex: 1;
+      text-align: right;
+    }
+
+    .cart-total {
+      text-align: right;
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif; /* Specific font for cart total */
+    }
+
+    .payment-methods {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    .payment-methods h4 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      font-family: 'Playfair Display', serif; /* Specific font for payment methods title */
+    }
+
+    .payment-methods label {
+      display: block;
+      margin-bottom: 0.8rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: 'Lora', serif; /* Specific font for payment methods labels */
+    }
+
+    .payment-methods input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+      margin-top: 1rem;
+      border-radius: 4px;
+      font-family: 'Lora', serif; /* Specific font for checkout button */
+    }
+    .checkout-btn:hover {
+      background-color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: var(--light);
+      opacity: 0.7;
+      font-size: 1.2rem;
+      transition: opacity 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+    }
+
+    /* Product Detail Modal Specific Styles */
+    .product-detail-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .product-detail-image-wrapper {
+        flex: 1;
+        text-align: center;
+    }
+    .product-detail-image {
+        max-width: 100%;
+        height: auto;
+        max-height: 450px;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+    .product-detail-info {
+        flex: 1;
+    }
+    .product-detail-info h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        font-family: 'Playfair Display', serif;
+    }
+    .product-detail-info .product-price {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .product-detail-info .product-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    .product-detail-actions {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+    .product-detail-actions .add-to-cart-modal {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+        background-color: var(--primary);
+        color: var(--light);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: 'Lora', serif;
+    }
+    .product-detail-actions .add-to-cart-modal:hover {
+        background-color: var(--secondary);
+    }
+    .product-detail-actions .wishlist-btn-modal {
+        font-size: 1.8rem;
+        color: #ccc;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    .product-detail-actions .wishlist-btn-modal.active {
+        color: #ff3366;
+    }
+
+    /* Product Reviews Section in Modal */
+    .product-reviews-section {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #eee;
+    }
+    .product-reviews-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-family: 'Playfair Display', serif;
+    }
+    .review-item {
+        background-color: var(--gray);
+        padding: 1rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+    .review-item:last-child {
+        margin-bottom: 0;
+    }
+    .review-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    .review-header .reviewer-name {
+        font-weight: 600;
+        font-family: 'Lora', serif;
+    }
+    .review-header .review-stars {
+        color: var(--secondary);
+        font-size: 0.9rem;
+    }
+    .review-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #333;
+    }
+    .no-reviews-message {
+        font-style: italic;
+        color: #666;
+        text-align: center;
+        padding: 1rem;
+    }
+
+
+    /* Responsive Styles */
+    @media (min-width: 769px) {
+        .product-detail-content {
+            flex-direction: row;
+        }
+        .product-detail-image-wrapper {
+            flex: 1.2; /* Give more space to image */
+        }
+        .product-detail-info {
+            flex: 0.8;
+        }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 0.7rem 1.5rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input,
+      .newsletter-form button {
+        width: 100%;
+      }
+
+      .newsletter-form button {
+        padding: 0.8rem;
+        margin-top: 0.5rem;
+      }
+
+      .product-detail-content {
+        flex-direction: column;
+      }
+    }
+
+    /* Promo Section Styles */
+    .promo-section {
+        background-color: var(--gray);
+        padding: 3rem 5%;
+        text-align: center;
+    }
+
+    .promo-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        font-family: 'Playfair Display', serif;
+        color: var(--primary);
+    }
+
+    .promo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .promo-card {
+        background-color: var(--light);
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        padding: 2rem;
+        text-align: left;
+        transition: transform 0.3s ease;
+    }
+
+    .promo-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .promo-card h3 {
+        font-size: 1.5rem;
+        color: var(--secondary);
+        margin-bottom: 0.8rem;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .promo-card p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 1.5rem;
+    }
+
+    .promo-code {
+        display: inline-block;
+        background-color: var(--primary);
+        color: var(--light);
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-family: 'Lora', serif;
+        cursor: pointer;
+        user-select: all; /* Allows easy selection for copy */
+    }
+
+    .promo-code:active {
+        background-color: var(--secondary);
+    }
+
+    /* Voucher input in cart modal */
+    .voucher-section {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+    }
+
+    .voucher-section h4 {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .voucher-input-group {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .voucher-input-group input {
+        flex: 1;
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: 'Lora', serif;
+    }
+
+    .voucher-input-group button {
+        padding: 0.6rem 1rem;
+        background-color: var(--primary);
+        color: var(--light);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: 'Lora', serif;
+    }
+
+    .voucher-input-group button:hover {
+        background-color: var(--secondary);
+    }
+
+    .cart-summary-line {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .cart-summary-line.discount {
+        color: #28a745; /* Green for discount */
+        font-weight: 600;
+    }
+
+    .cart-summary-line.shipping {
+        color: #007bff; /* Blue for shipping */
+        font-weight: 600;
+    }
+
+    .cart-summary-line.shipping span:last-child {
+        color: #28a745; /* Green for free shipping */
+    }
+
+    .cart-total {
+        border-top: 2px solid var(--primary);
+        padding-top: 1rem;
+        margin-top: 1rem;
+    }
+
+    .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: var(--secondary);
+        color: var(--light);
+        padding: 15px 25px;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+        animation: fadeIn 0.5s forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateX(100px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeOut {
+        from { opacity: 1; transform: translateX(0); }
+        to { opacity: 0; transform: translateX(100px); }
+    }
+    .remove-item-btn {
+        background: none;
+        border: none;
+        color: #ff0000;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+    .remove-item-btn:hover {
+        color: #cc0000;
+    }
+  </style>
+  <!-- Updated Google Fonts import to include Lora -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">ÉLÉGANCE <span>COUTURE</span></a>
+      <!-- Wrapper untuk tautan navigasi utama dan kategori -->
+      <div class="nav-links-wrapper">
+        <div class="nav-main-links">
+          <a href="#" data-filter="all">Beranda</a>
+          <a href="#" data-filter="cart-collection">Koleksi</a>
+          <a href="#" data-filter="about">Tentang</a>
+          <a href="#" data-filter="contact">Kontak</a>
+        </div>
+        <div class="nav-category-links">
+          <a href="#" data-filter="pakaian">Pakaian</a>
+          <a href="#" data-filter="tas">Tas</a>
+          <a href="#" data-filter="sepatu">Sepatu</a>
+        </div>
+      </div>
+      <div class="cart-icon">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Sempurnakan Gaya Anda dengan Sentuhan Kemewahan</h1>
+      <p>Jelajahi koleksi eksklusif kami yang dirancang dengan presisi, memadukan keanggunan klasik dan tren kontemporer untuk penampilan yang tak terlupakan.</p>
+      <div class="hero-buttons">
+        <a href="#collection" class="btn" id="belanja-sekarang-btn">Belanja Sekarang</a>
+        <a href="#promo-section" class="btn btn-outline" id="lihat-promo-btn">Lihat Promo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: Promo Section -->
+  <section id="promo-section" class="promo-section">
+    <h2>Promo & Penawaran Spesial</h2>
+    <div class="promo-grid">
+      <div class="promo-card">
+        <h3>Diskon 15% untuk Pembelian Pertama</h3>
+        <p>Dapatkan potongan 15% untuk pembelian pertama Anda dengan minimal belanja Rp 5.000.000.</p>
+        <span class="promo-code" data-code="NEWUSER15">NEWUSER15</span>
+      </div>
+      <div class="promo-card">
+        <h3>Gratis Ongkir Seluruh Indonesia</h3>
+        <p>Nikmati gratis ongkir untuk setiap pembelian di atas Rp 10.000.000.</p>
+        <span class="promo-code" data-code="FREESHIP">FREESHIP</span>
+      </div>
+      <div class="promo-card">
+        <h3>Diskon Rp 500.000 untuk Koleksi Tas</h3>
+        <p>Potongan harga Rp 500.000 khusus untuk pembelian produk dari kategori Tas.</p>
+        <span class="promo-code" data-code="BAGLOVE">BAGLOVE</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="collection" class="collection">
+    <div class="section-title">
+      <h2>Koleksi Mewah</h2>
+    </div>
+
+    <div class="products-grid">
+      <!-- Product 1 (Pakaian) -->
+      <div class="product-card" data-product-id="prod001" data-category="pakaian" data-rating="4.5" data-reviews="12">
+        <div class="product-image">
+          <img src="sweet ivory dress 2025-07-10 at 11.55.29.jpeg" alt="Cream silk blouse with gold embroidery details, paired with tailored trousers - luxury office wear">
+          <span class="product-badge">NEW</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">sweet ivory dress</h3>
+          <div class="product-price" data-raw-price="12500000">12.500.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(12 Ulasan)</span>
+          </div>
+          <p class="product-desc">dress minimalis dengan desain lengan balon dan hiasan fita pada bagian leher memberi kesan elegan yang cocok dipakai disegala acara.</p>
+          <div class="product-actions">
+            <button class="wishlist-btn" title="Simpan ke Wishlist"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 (Pakaian) -->
+      <div class="product-card" data-product-id="prod002" data-category="pakaian" data-rating="4.8" data-reviews="25">
+        <div class="product-image">
+          <img src="casual snowy coat  2025-07-10 at 11.55.29.jpeg">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">casual snowy coat</h3>
+          <div class="product-price" data-raw-price="24500000">24.500.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(25 Ulasan)</span>
+          </div>
+          <p class="product-desc">dengan sentugan earth tone yang memberi kesan santai dan hangat.</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 (Pakaian) -->
+      <div class="product-card" data-product-id="prod003" data-category="pakaian" data-rating="4.9" data-reviews="8">
+        <div class="product-image">
+          <img src="broken white set  2025-07-10 at 11.55.29.jpeg" alt="Gold sequin evening gown with plunging neckline and thigh-high slit - show-stopping red carpet dress">
+          <span class="product-badge">LIMITED</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">broken white set</h3>
+          <div class="product-price" data-raw-price="37500000">37.500.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(8 Ulasan)</span>
+          </div>
+          <p class="product-desc">setelan slimfit dan celana loose memberi kesan elegan dalam balutannya.</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 (Pakaian) -->
+      <div class="product-card" data-product-id="prod004" data-category="pakaian" data-rating="4.2" data-reviews="15">
+        <div class="product-image">
+          <img src="ivori cuat 2025-07-10 at 11.55.28.jpeg">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Ivory Coat</h3>
+          <div class="product-price" data-raw-price="18500000">18.500.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(15 Ulasan)</span>
+          </div>
+          <p class="product-desc">Long coat tebal warna krem dengan detail pinggiran hitam, model loose dan oversized, kerah lebar, serta dua saku di depan.</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 (bag) -->
+      <div class="product-card" data-category="tas" data-product-id="prod007" data-rating="4.7" data-reviews="20">
+        <div class="product-image">
+          <img src="eora beige bag 2025-07-10 at 11.55.29.jpeg">
+          <span class="product-badge">NEW</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">eora beige bag</h3>
+          <div class="product-price" data-raw-price="25000000">25.000.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(20 Ulasan)</span>
+          </div>
+          <p class="product-desc">tas simpel dengan handle  berwarna senada yang mudah di genggam.</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 (bag) -->
+      <div class="product-card" data-category="tas" data-product-id="prod007" data-rating="4.7" data-reviews="20">
+        <div class="product-image">
+          <img src="aegyo sling bag 2025-07-10 at 11.55.30.jpeg">
+          <span class="product-badge">NEW</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">aegyo sling bag</h3>
+          <div class="product-price" data-raw-price="32000000">32.000.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(20 Ulasan)</span>
+          </div>
+          <p class="product-desc">tas dengan ukuran yang sedang yang melengkapi daily ootd mu</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Product 7 (Bag) -->
+      <div class="product-card" data-category="tas" data-product-id="prod007" data-rating="4.7" data-reviews="20">
+        <div class="product-image">
+          <img src="ocean work bag 2025-07-10 at 11.55.30.jpeg">
+          <span class="product-badge">NEW</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">ocean work bag</h3>
+          <div class="product-price" data-raw-price="32000000">32.000.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(20 Ulasan)</span>
+          </div>
+          <p class="product-desc">tas model totebag dan di lengkapi untuk bisa di jadikan slingbag juga</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 (Shoes) -->
+      <div class="product-card" data-category="sepatu" data-product-id="prod008" data-rating="4.9" data-reviews="18">
+        <div class="product-image">
+          <img src="rough white plat shoes 2025-07-10 at 11.55.27.jpeg">
+          <span class="product-badge">LIMITED</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">rough white plat shoes</h3>
+          <div class="product-price" data-raw-price="18500000">18.500.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(18 Ulasan)</span>
+          </div>
+          <p class="product-desc">Sepatu wanita model Mary Jane warna putih, desain simpel dan elegan. Cocok untuk acara formal maupun kasual. Bahan nyaman dipakai seharian, dengan strap kecil dan aksen buckle emas yang manis. Sol datar, cocok untuk jalan-jalan atau ke kantor.</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW PRODUCT 9 (Bag) -->
+      <div class="product-card" data-category="tas" data-product-id="prod009" data-rating="4.3" data-reviews="7">
+        <div class="product-image">
+          <img src="triangel white 2025-07-10 at 11.55.30.jpeg" alt="Luxury evening clutch with intricate beadwork">
+          <span class="product-badge">NEW</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">triangel white</h3>
+          <div class="product-price" data-raw-price="15000000">15.000.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(7 Ulasan)</span>
+          </div>
+          <p class="product-desc">tas putih dengan handle gold yang mudah di tenteng, di lengkapi juga dengan tali agar bisa dislempangkan.</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW PRODUCT 10 (Shoes) -->
+      <div class="product-card" data-category="sepatu" data-product-id="prod010" data-rating="4.5" data-reviews="11">
+        <div class="product-image">
+          <img src="rose gold 2025-07-10 at 11.55.28.jpeg" alt="Elegant leather crossbody bag with gold chain strap">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">rose gold high heels</h3>
+          <div class="product-price" data-raw-price="18000000">18.000.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(11 Ulasan)</span>
+          </div>
+          <p class="product-desc">warna rose gold yang mewah
+            tinggi heels 5cm
+            bisa di pakai di berbagai acara</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW PRODUCT 11 (Shoes) -->
+      <div class="product-card" data-category="sepatu" data-product-id="prod011" data-rating="5.0" data-reviews="5">
+        <div class="product-image">
+          <img src="white rose high heels 2025-07-10 at 11.55.28.jpeg">
+          <span class="product-badge">NEW</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">white rose high heels</h3>
+          <div class="product-price" data-raw-price="25000000">25.000.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(5 Ulasan)</span>
+          </div>
+          <p class="product-desc">tinggi heels 5cm, desain elegan yang bisa di pakai di acara formal manapun</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW PRODUCT 12 (Shoes) -->
+      <div class="product-card" data-category="sepatu" data-product-id="prod012" data-rating="4.0" data-reviews="9">
+        <div class="product-image">
+          <img src="gladies wedges rose gold 2025-07-10 at 11.55.27.jpeg" alt="Velvet loafers with gold embroidery">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">gladies wedges rose gold</h3>
+          <div class="product-price" data-raw-price="12000000">12.000.000</div>
+          <div class="product-rating">
+            <span class="stars"></span>
+            <span class="review-count">(9 Ulasan)</span>
+          </div>
+          <p class="product-desc">warna rose gold yang mewah
+            tinggi heels 3cm
+            bisa di pakai di berbagai acara</p>
+          <div class="product-actions">
+            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            <button class="add-to-cart">Beli</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h3>Bergabung dengan Daftar Eksklusif Kami</h3>
+    <p>Berlangganan untuk mendapatkan akses awal ke koleksi baru, penjualan privat, dan saran gaya mewah.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Alamat email Anda">
+      <button type="submit">BERLANGGANAN</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>ÉLÉGANCE COUTURE</h4>
+        <p>Menciptakan fashion mewah yang abadi sejak 1995. Koleksi kami memadukan desain kontemporer dengan kerajinan tradisional.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Informasi</h4>
+        <ul>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Keberlanjutan</a></li>
+          <li><a href="#">Karir</a></li>
+          <li><a href="#">Pers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Layanan Pelanggan</h4>
+        <ul>
+          <li><a href="#">Hubungi Kami</a></li>
+          <li><a href="#">Kebijakan Pengiriman</a></li>
+          <li><a href="#">Pengembalian & Penukaran</a></li>
+          <li><a href="#">Panduan Ukuran</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Kontak</h4>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Jalan PDAM, SUKAJADI</li>
+          <li><i class="fas fa-phone"></i> +62 8885674321</li>
+          <li><i class="fas fa-envelope"></i> elegancecounture@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 ÉLÉGANCE COUTURE. Seluruh hak dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart">&times;</span>
+      <h2>Keranjang Belanja</h2>
+      <div class="cart-items">
+        <!-- Items will be added here dynamically -->
+      </div>
+
+      <!-- NEW: Voucher Section in Cart Modal -->
+      <div class="voucher-section">
+        <h4>Punya Kode Voucher?</h4>
+        <div class="voucher-input-group">
+          <input type="text" id="voucher-code-input" placeholder="Masukkan kode voucher">
+          <button id="apply-voucher-btn">Terapkan</button>
+        </div>
+        <p id="voucher-message" style="font-size: 0.9rem; margin-top: 0.5rem;"></p>
+      </div>
+
+      <div class="cart-summary-line">
+        <span>Subtotal:</span>
+        <span class="subtotal-price">Rp 0</span>
+      </div>
+      <div class="cart-summary-line discount" style="display: none;">
+        <span>Diskon Voucher:</span>
+        <span class="discount-amount">Rp 0</span>
+      </div>
+      <div class="cart-summary-line shipping">
+        <span>Pengiriman:</span>
+        <span class="shipping-cost">Rp 0</span>
+      </div>
+      <div class="cart-total">
+        <h3>Total: <span class="total-price">Rp 0</span></h3>
+      </div>
+
+      <div class="payment-methods">
+        <h4>Pilih Metode Pembayaran:</h4>
+        <label>
+          <input type="radio" name="payment_method" value="cod" checked> Cash On Delivery (COD)
+        </label>
+        <label>
+          <input type="radio" name="payment_method" value="bca"> Transfer Bank BCA
+        </label>
+        <label>
+          <input type="radio" name="payment_method" value="mandiri"> Transfer Bank Mandiri
+        </label>
+        <label>
+          <input type="radio" name="payment_method" value="bri"> Transfer Bank BRI
+        </label>
+        <label>
+          <input type="radio" name="payment_method" value="bni"> Transfer Bank BNI
+        </label>
+      </div>
+
+      <button class="checkout-btn">Bayar Sekarang</button>
+    </div>
+  </div>
+
+  <!-- Product Detail Modal -->
+  <div class="product-detail-modal">
+    <div class="product-detail-content">
+      <span class="close-product-detail">&times;</span>
+      <div class="product-detail-image-wrapper">
+        <img src="" alt="Product Image" class="product-detail-image">
+      </div>
+      <div class="product-detail-info">
+        <h2 class="product-detail-title"></h2>
+        <div class="product-rating">
+            <span class="stars product-detail-stars"></span>
+            <span class="review-count product-detail-review-count"></span>
+        </div>
+        <div class="product-price product-detail-price"></div>
+        <p class="product-desc product-detail-desc"></p>
+        <div class="product-detail-actions">
+          <button class="wishlist-btn-modal" title="Simpan ke Wishlist"><i class="far fa-heart"></i></button>
+          <button class="add-to-cart-modal">Beli</button>
+        </div>
+        <div class="product-reviews-section">
+            <h3>Ulasan Pembeli</h3>
+            <div class="reviews-list">
+                <!-- Reviews will be loaded here dynamically -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Wishlist functionality
+    document.querySelectorAll('.wishlist-btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent product card click event
+        this.classList.toggle('active');
+        if (this.classList.contains('active')) {
+          this.innerHTML = '<i class="fas fa-heart"></i>';
+        } else {
+          this.innerHTML = '<i class="far fa-heart"></i>';
+        }
+      });
+    });
+
+    // Cart functionality
+    let cartItems = []; // Stores { id, name, price, category }
+    let appliedVoucher = null; // Stores the applied voucher object
+    const shippingCost = 500000; // Default shipping cost in Rupiah
+
+    const cartCount = document.querySelector('.cart-count');
+    const cartModal = document.querySelector('.cart-modal');
+    const closeCartBtn = document.querySelector('.close-cart');
+    const cartItemsContainer = document.querySelector('.cart-items');
+    const subtotalPriceEl = document.querySelector('.subtotal-price'); // NEW
+    const discountAmountEl = document.querySelector('.discount-amount'); // NEW
+    const discountLineEl = document.querySelector('.cart-summary-line.discount'); // NEW
+    const shippingCostEl = document.querySelector('.shipping-cost'); // NEW
+    const shippingLineEl = document.querySelector('.cart-summary-line.shipping'); // NEW
+    const totalPriceEl = document.querySelector('.total-price');
+    const checkoutBtn = document.querySelector('.checkout-btn');
+
+    // Voucher elements
+    const voucherCodeInput = document.getElementById('voucher-code-input');
+    const applyVoucherBtn = document.getElementById('apply-voucher-btn');
+    const voucherMessageEl = document.getElementById('voucher-message');
+
+    // Product Detail Modal elements
+    const productDetailModal = document.querySelector('.product-detail-modal');
+    const closeProductDetailBtn = document.querySelector('.close-product-detail');
+    const productDetailImage = document.querySelector('.product-detail-image');
+    const productDetailTitle = document.querySelector('.product-detail-title');
+    const productDetailPrice = document.querySelector('.product-detail-price');
+    const productDetailDesc = document.querySelector('.product-detail-desc');
+    const productDetailStars = document.querySelector('.product-detail-stars');
+    const productDetailReviewCount = document.querySelector('.product-detail-review-count');
+    const wishlistBtnModal = document.querySelector('.wishlist-btn-modal');
+    const addToCartModalBtn = document.querySelector('.add-to-cart-modal');
+    const reviewsListContainer = document.querySelector('.reviews-list'); // New element for reviews
+
+    // Data Ulasan Pembeli
+    const productReviews = {
+        "prod001": [
+            { name: "Amelia Putri", rating: 5, text: "Blus sutra ini benar-benar luar biasa! Kualitasnya premium, sulaman emasnya sangat detail dan terlihat mewah. Saya memakainya untuk acara formal dan menerima banyak pujian. Sangat nyaman dipakai dan jatuh dengan indah di badan. Investasi yang sangat sepadan!" }
+        ],
+        "prod002": [
+            { name: "Budi Santoso", rating: 4, text: "Mantel cashmere ini sangat hangat dan stylish. Potongannya pas di badan dan bahunya terstruktur dengan baik. Saya suka detail belt-nya yang membuat siluet lebih ramping. Sedikit lebih berat dari yang saya kira, tapi secara keseluruhan ini adalah mantel berkualitas tinggi yang akan bertahan lama." }
+        ],
+        "prod003": [
+            { name: "Citra Dewi", rating: 4.9, text: "Gaun ini sangat memukau! Kilauan sequin-nya luar biasa dan desainnya sangat berani. Saya merasa seperti bintang di karpet merah. Kualitasnya juga sangat baik, tidak ada sequin yang lepas. Sangat direkomendasikan untuk acara-acara glamor!" }
+        ],
+        "prod004": [
+            { name: "Dewi Lestari", rating: 4.2, text: "Set linen ini sempurna untuk liburan! Bahannya ringan dan sangat nyaman di cuaca tropis. Desainnya chic dan bisa dipakai terpisah. Saya suka garis nautical-nya yang memberikan sentuhan stylish. Sedikit mudah kusut, tapi itu wajar untuk linen." }
+        ],
+        "prod007": [ // This ID is used for multiple bags, consider unique IDs for real products
+            { name: "Gita Permata", rating: 4.7, text: "Tas ini adalah pernyataan gaya! Kulit buayanya terasa sangat mewah dan hardware gold-tone-nya sangat kokoh. Ukurannya pas untuk membawa semua kebutuhan saya sehari-hari. Desainnya timeless dan pasti akan menjadi favorit saya untuk waktu yang lama." }
+        ],
+        "prod008": [
+            { name: "Citra Dewi", rating: 5, text: "Sepatu ini adalah impian! Kristal-kristalnya berkilauan dengan indah dan membuat saya merasa seperti Cinderella. Meskipun haknya tinggi, surprisingly nyaman untuk ukuran sepatu hak. Saya memakainya untuk pesta pernikahan dan tidak ada yang bisa mengalihkan pandangan dari kaki saya. Sangat merekomendasikan untuk acara spesial!" }
+        ],
+        "prod009": [
+            { name: "Hana Wijaya", rating: 4.3, text: "Clutch ini sangat unik dan artistik. Manik-maniknya dikerjakan dengan sangat rapi dan warnanya cantik. Cocok untuk melengkapi gaun malam atau busana pesta. Ukurannya kecil, jadi hanya muat untuk barang esensial, tapi itu yang saya harapkan." }
+        ],
+        "prod010": [
+            { name: "David Wijaya", rating: 4.5, text: "Tas selempang ini sangat elegan dan praktis untuk sehari-hari. Kulitnya terasa lembut dan rantai emasnya memberikan sentuhan mewah. Ukurannya pas untuk membawa dompet, ponsel, dan beberapa barang kecil lainnya. Desainnya klasik, jadi cocok untuk berbagai gaya. Hanya saja, saya berharap ada sedikit lebih banyak ruang di dalamnya." }
+        ],
+        "prod011": [
+            { name: "Indra Kusuma", rating: 5, text: "Sepatu ini adalah mahakarya! Berliannya berkilauan di setiap langkah dan desainnya sangat eksklusif. Saya memakainya untuk acara gala dan merasa sangat istimewa. Kualitasnya tak tertandingi. Ini adalah sepatu yang akan saya kenang selamanya." }
+        ],
+        "prod012": [
+            { name: "Joko Susilo", rating: 4, text: "Loafers beludru ini sangat nyaman dan stylish. Sulaman emasnya memberikan sentuhan klasik yang mewah. Cocok untuk acara santai namun tetap ingin terlihat berkelas. Saya suka bagaimana mereka bisa dipadukan dengan celana panjang atau bahkan rok. Sangat direkomendasikan untuk kenyamanan dan gaya." }
+        ]
+    };
+
+    // NEW: Voucher Data
+    const vouchers = {
+        "NEWUSER15": {
+            type: "percentage",
+            value: 0.15, // 15%
+            min_spend: 5000000,
+            applies_to: "all",
+            description: "Diskon 15% untuk pembelian pertama Anda dengan minimal belanja Rp 5.000.000."
+        },
+        "FREESHIP": {
+            type: "shipping",
+            value: 0, // Free shipping
+            min_spend: 10000000,
+            applies_to: "all",
+            description: "Nikmati gratis ongkir untuk setiap pembelian di atas Rp 10.000.000."
+        },
+        "BAGLOVE": {
+            type: "fixed",
+            value: 500000, // Rp 500.000
+            min_spend: 0, // No minimum spend for this specific voucher
+            applies_to: "tas", // Applies only to 'tas' category
+            description: "Potongan harga Rp 500.000 khusus untuk pembelian produk dari kategori Tas."
+        }
+    };
+
+    // Function to format number back to Rupiah string (e.g., "Rp 12,5 Juta")
+    function formatRupiahPrice(priceNumber) {
+        if (priceNumber === 0) return "Rp 0";
+        if (priceNumber >= 1000000) {
+            const juta = priceNumber / 1000000;
+            return `Rp ${juta.toLocaleString('id-ID', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} Juta`;
+        }
+        return `Rp ${priceNumber.toLocaleString('id-ID')}`;
+    }
+
+    // Function to update cart count display
+    function updateCartCount() {
+      cartCount.textContent = cartItems.length;
+    }
+
+    // Function to render stars
+    function renderStars(rating, targetElement) {
+        let starsHtml = '';
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating % 1 !== 0;
+
+        for (let i = 0; i < fullStars; i++) {
+            starsHtml += '<i class="fas fa-star"></i>';
+        }
+        if (hasHalfStar) {
+            starsHtml += '<i class="fas fa-star-half-alt"></i>';
+        }
+        const emptyStars = 5 - Math.ceil(rating);
+        for (let i = 0; i < emptyStars; i++) {
+            starsHtml += '<i class="far fa-star"></i>';
+        }
+        targetElement.innerHTML = starsHtml;
+    }
+
+    // Function to display product reviews in the modal
+    function displayProductReviews(productId) {
+        reviewsListContainer.innerHTML = ''; // Clear previous reviews
+        const reviews = productReviews[productId];
+
+        if (reviews && reviews.length > 0) {
+            reviews.forEach(review => {
+                const reviewItem = document.createElement('div');
+                reviewItem.classList.add('review-item');
+                reviewItem.innerHTML = `
+                    <div class="review-header">
+                        <span class="reviewer-name">${review.name}</span>
+                        <span class="review-stars"></span>
+                    </div>
+                    <p class="review-text">${review.text}</p>
+                `;
+                const reviewStarsElement = reviewItem.querySelector('.review-stars');
+                renderStars(review.rating, reviewStarsElement);
+                reviewsListContainer.appendChild(reviewItem);
+            });
+        } else {
+            reviewsListContainer.innerHTML = '<p class="no-reviews-message">Belum ada ulasan untuk produk ini.</p>';
+        }
+    }
+
+
+    // Initialize product ratings on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.product-card').forEach(card => {
+            const rating = parseFloat(card.dataset.rating);
+            const starsElement = card.querySelector('.product-rating .stars');
+            if (starsElement && !isNaN(rating)) {
+                renderStars(rating, starsElement);
+            }
+        });
+
+        // Add event listeners for promo codes to copy them
+        document.querySelectorAll('.promo-code').forEach(promoCodeSpan => {
+            promoCodeSpan.addEventListener('click', function() {
+                const code = this.textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    showNotification(`Kode "${code}" berhasil disalin!`, 'success');
+                }).catch(err => {
+                    console.error('Gagal menyalin kode: ', err);
+                    showNotification('Gagal menyalin kode.', 'error');
+                });
+            });
+        });
+    });
+
+    // Toggle cart modal
+    document.querySelector('.cart-icon').addEventListener('click', function(e) {
+      e.preventDefault();
+      updateCartDisplay();
+      cartModal.style.display = 'block';
+    });
+
+    closeCartBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      cartModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+      if (e.target === cartModal) {
+        cartModal.style.display = 'none';
+      }
+      if (e.target === productDetailModal) {
+        productDetailModal.style.display = 'none';
+      }
+    });
+
+    // Add to cart function (now "Beli" button)
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent product card click event
+        const productCard = this.closest('.product-card');
+        addProductToCart(productCard);
+      });
+    });
+
+    // Function to add product to cart (reusable for card and modal)
+    function addProductToCart(productElement) {
+        const productId = productElement.dataset.productId;
+        const productName = productElement.querySelector('.product-title, .product-detail-title').textContent;
+        const productPrice = parseFloat(productElement.querySelector('.product-price, .product-detail-price').dataset.rawPrice);
+        const productCategory = productElement.dataset.category; // Get category
+
+        cartItems.push({
+            id: productId,
+            name: productName,
+            price: productPrice,
+            category: productCategory // Store category
+        });
+
+        updateCartCount();
+        showNotification(`${productName} ditambahkan ke keranjang`, 'success');
+    }
+
+    // NEW: Function to show notification
+    function showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        if (type === 'success') {
+            notification.style.backgroundColor = 'var(--secondary)';
+            notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
+        } else if (type === 'error') {
+            notification.style.backgroundColor = '#dc3545'; /* Red */
+            notification.innerHTML = `<i class="fas fa-times-circle"></i> ${message}`;
+        } else {
+            notification.style.backgroundColor = '#007bff'; /* Blue */
+            notification.innerHTML = `<i class="fas fa-info-circle"></i> ${message}`;
+        }
+        notification.style.color = 'var(--light)';
+        notification.style.padding = '15px 25px';
+        notification.style.borderRadius = '5px';
+        notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+        notification.style.zIndex = '1000';
+        notification.style.animation = 'fadeIn 0.5s forwards';
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+          notification.style.animation = 'fadeOut 0.5s forwards';
+          setTimeout(() => {
+            document.body.removeChild(notification);
+          }, 500);
+        }, 3000);
+    }
+
+    // Update cart display in modal
+    function updateCartDisplay() {
+      cartItemsContainer.innerHTML = '';
+      let subtotal = 0;
+      let discount = 0;
+      let currentShippingCost = shippingCost;
+
+      if (cartItems.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Keranjang Anda kosong.</p>';
+        appliedVoucher = null; // Reset voucher if cart is empty
+        voucherCodeInput.value = '';
+        voucherMessageEl.textContent = '';
+      } else {
+        cartItems.forEach((item, index) => {
+          const cartItemEl = document.createElement('div');
+          cartItemEl.classList.add('cart-item');
+          cartItemEl.innerHTML = `
+            <span class="item-name">${item.name}</span>
+            <span class="item-price">${formatRupiahPrice(item.price)}</span>
+            <button class="remove-item-btn" data-index="${index}"><i class="fas fa-trash"></i></button>
+          `;
+          cartItemsContainer.appendChild(cartItemEl);
+          subtotal += item.price;
+        });
+      }
+
+      // Apply voucher logic
+      if (appliedVoucher) {
+          if (subtotal >= appliedVoucher.min_spend) {
+              if (appliedVoucher.type === "percentage") {
+                  discount = subtotal * appliedVoucher.value;
+                  voucherMessageEl.style.color = 'green';
+                  voucherMessageEl.textContent = `Voucher "${appliedVoucher.code}" berhasil diterapkan! Diskon ${appliedVoucher.value * 100}%`;
+              } else if (appliedVoucher.type === "fixed") {
+                  // Check if the voucher applies to specific categories
+                  const hasApplicableProduct = cartItems.some(item => appliedVoucher.applies_to === "all" || item.category === appliedVoucher.applies_to);
+                  if (hasApplicableProduct) {
+                      discount = appliedVoucher.value;
+                      voucherMessageEl.style.color = 'green';
+                      voucherMessageEl.textContent = `Voucher "${appliedVoucher.code}" berhasil diterapkan! Potongan ${formatRupiahPrice(appliedVoucher.value)}`;
+                  } else {
+                      discount = 0;
+                      voucherMessageEl.style.color = 'orange';
+                      voucherMessageEl.textContent = `Voucher "${appliedVoucher.code}" tidak berlaku untuk produk di keranjang Anda.`;
+                  }
+              } else if (appliedVoucher.type === "shipping") {
+                  currentShippingCost = 0;
+                  voucherMessageEl.style.color = 'green';
+                  voucherMessageEl.textContent = `Voucher "${appliedVoucher.code}" berhasil diterapkan! Gratis Ongkir.`;
+              }
+          } else {
+              discount = 0;
+              currentShippingCost = shippingCost;
+              voucherMessageEl.style.color = 'orange';
+              voucherMessageEl.textContent = `Voucher "${appliedVoucher.code}" membutuhkan minimal belanja ${formatRupiahPrice(appliedVoucher.min_spend)}.`;
+          }
+      } else {
+          voucherMessageEl.textContent = ''; // Clear message if no voucher applied
+      }
+
+      // Update display for subtotal, discount, and shipping
+      subtotalPriceEl.textContent = formatRupiahPrice(subtotal);
+
+      if (discount > 0) {
+          discountLineEl.style.display = 'flex';
+          discountAmountEl.textContent = `- ${formatRupiahPrice(discount)}`;
+      } else {
+          discountLineEl.style.display = 'none';
+      }
+
+      shippingCostEl.textContent = currentShippingCost === 0 ? 'Gratis' : formatRupiahPrice(currentShippingCost);
+      shippingCostEl.style.color = currentShippingCost === 0 ? '#28a745' : 'inherit'; // Green for free
+
+      let finalTotal = subtotal - discount + currentShippingCost;
+      if (finalTotal < 0) finalTotal = 0; // Ensure total doesn't go negative
+
+      totalPriceEl.textContent = formatRupiahPrice(finalTotal);
+      updateCartCount(); // Ensure cart count is updated when modal is opened
+
+      // Add event listeners for remove buttons
+      document.querySelectorAll('.remove-item-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const indexToRemove = parseInt(this.dataset.index);
+          cartItems.splice(indexToRemove, 1); // Remove item from array
+          updateCartDisplay(); // Re-render cart
+        });
+      });
+    }
+
+    // NEW: Apply Voucher Button Click
+    applyVoucherBtn.addEventListener('click', () => {
+        const code = voucherCodeInput.value.toUpperCase().trim();
+        const voucher = vouchers[code];
+
+        if (voucher) {
+            appliedVoucher = { ...voucher, code: code }; // Store voucher details and its code
+            updateCartDisplay(); // Recalculate and update cart display
+        } else {
+            appliedVoucher = null; // Clear any previously applied voucher
+            voucherMessageEl.style.color = 'red';
+            voucherMessageEl.textContent = 'Kode voucher tidak valid.';
+            updateCartDisplay(); // Update display to reflect no voucher
+        }
+    });
+
+
+    // Checkout functionality
+    checkoutBtn.addEventListener('click', () => {
+      const selectedPaymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
+      let subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+      let discount = 0;
+      let currentShippingCost = shippingCost;
+
+      if (cartItems.length === 0) {
+        alert('Keranjang Anda kosong. Silakan tambahkan produk terlebih dahulu.');
+        return;
+      }
+
+      // Recalculate based on applied voucher at checkout
+      if (appliedVoucher) {
+          if (subtotal >= appliedVoucher.min_spend) {
+              if (appliedVoucher.type === "percentage") {
+                  discount = subtotal * appliedVoucher.value;
+              } else if (appliedVoucher.type === "fixed") {
+                  const hasApplicableProduct = cartItems.some(item => appliedVoucher.applies_to === "all" || item.category === appliedVoucher.applies_to);
+                  if (hasApplicableProduct) {
+                      discount = appliedVoucher.value;
+                  }
+              } else if (appliedVoucher.type === "shipping") {
+                  currentShippingCost = 0;
+              }
+          }
+      }
+
+      let finalTotal = subtotal - discount + currentShippingCost;
+      if (finalTotal < 0) finalTotal = 0;
+
+      let paymentMessage = `Pembayaran berhasil!\n`;
+      paymentMessage += `Subtotal: ${formatRupiahPrice(subtotal)}\n`;
+      if (discount > 0) {
+          paymentMessage += `Diskon Voucher: - ${formatRupiahPrice(discount)}\n`;
+      }
+      paymentMessage += `Pengiriman: ${currentShippingCost === 0 ? 'Gratis' : formatRupiahPrice(currentShippingCost)}\n`;
+      paymentMessage += `Total Akhir: ${formatRupiahPrice(finalTotal)}\n`;
+      paymentMessage += `Metode Pembayaran: `;
+
+      switch (selectedPaymentMethod) {
+        case 'cod':
+          paymentMessage += 'Cash On Delivery (COD)\nMohon siapkan uang tunai saat barang tiba.';
+          break;
+        case 'bca':
+          paymentMessage += 'Transfer Bank BCA\nSilakan transfer ke Rek. BCA 1234567890 a/n ÉLÉGANCE COUTURE.';
+          break;
+        case 'mandiri':
+          paymentMessage += 'Transfer Bank Mandiri\nSilakan transfer ke Rek. Mandiri 0987654321 a/n ÉLÉGANCE COUTURE.';
+          break;
+        case 'bri':
+          paymentMessage += 'Transfer Bank BRI\nSilakan transfer ke Rek. BRI 1122334455 a/n ÉLÉGANCE COUTURE.';
+          break;
+        case 'bni':
+          paymentMessage += 'Transfer Bank BNI\nSilakan transfer ke Rek. BNI 6677889900 a/n ÉLÉGANCE COUTURE.';
+          break;
+        default:
+          paymentMessage += 'Tidak diketahui.';
+      }
+
+      alert(paymentMessage);
+      cartItems = []; // Clear cart after successful checkout
+      appliedVoucher = null; // Clear applied voucher
+      updateCartCount();
+      cartModal.style.display = 'none';
+      filterProducts('all'); // Reset product display
+    });
+
+    // Filter functionality
+    document.querySelectorAll('.nav-main-links a, .nav-category-links a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const filter = this.getAttribute('data-filter');
+
+        if(filter === 'contact') {
+          document.querySelector('footer').scrollIntoView({behavior: 'smooth'});
+          return;
+        }
+        if(filter === 'about') {
+            // Placeholder for about section scroll or display
+            alert('Fitur "Tentang Kami" akan segera hadir!');
+            return;
+        }
+
+        filterProducts(filter);
+      });
+    });
+
+    function filterProducts(filter) {
+      const productCards = document.querySelectorAll('.product-card');
+      const cartProductIds = new Set(cartItems.map(item => item.id)); // Get IDs of products in cart
+
+      productCards.forEach(card => {
+        const productId = card.dataset.productId;
+        const productCategory = card.dataset.category;
+
+        if (filter === 'all') {
+          card.style.display = 'block';
+        } else if (filter === 'cart-collection') { // Filter untuk "Koleksi" (produk di keranjang)
+          if (cartProductIds.has(productId)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        } else { // Filter berdasarkan kategori (tas, sepatu, pakaian)
+          if (productCategory === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+      });
+    }
+
+    // Event listeners for Hero section buttons
+    document.getElementById('lihat-promo-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('promo-section').scrollIntoView({behavior: 'smooth'});
+    });
+
+    document.getElementById('belanja-sekarang-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('collection').scrollIntoView({behavior: 'smooth'});
+        filterProducts('all'); // Show all products when "Belanja Sekarang" is clicked
+    });
+
+    // Product Card Click to open Detail Modal
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const imageUrl = this.querySelector('.product-image img').src;
+            const title = this.querySelector('.product-title').textContent;
+            const price = this.querySelector('.product-price').textContent;
+            const rawPrice = this.querySelector('.product-price').dataset.rawPrice;
+            const description = this.querySelector('.product-desc').textContent;
+            const rating = parseFloat(this.dataset.rating);
+            const reviews = this.dataset.reviews;
+            const productId = this.dataset.productId;
+            const productCategory = this.dataset.category; // Get category
+
+            productDetailImage.src = imageUrl;
+            productDetailTitle.textContent = title;
+            productDetailPrice.textContent = price;
+            productDetailPrice.dataset.rawPrice = rawPrice; // Store raw price for add to cart
+            productDetailDesc.textContent = description;
+            productDetailModal.dataset.productId = productId; // Store product ID on modal for add to cart
+            productDetailModal.dataset.category = productCategory; // Store category on modal
+
+            renderStars(rating, productDetailStars);
+            productDetailReviewCount.textContent = `(${reviews} Ulasan)`;
+
+            // Display product reviews
+            displayProductReviews(productId);
+
+            // Set wishlist button state in modal
+            const cardWishlistBtn = this.querySelector('.wishlist-btn');
+            if (cardWishlistBtn && cardWishlistBtn.classList.contains('active')) {
+                wishlistBtnModal.classList.add('active');
+                wishlistBtnModal.innerHTML = '<i class="fas fa-heart"></i>';
+            } else {
+                wishlistBtnModal.classList.remove('active');
+                wishlistBtnModal.innerHTML = '<i class="far fa-heart"></i>';
+            }
+
+            productDetailModal.style.display = 'block';
+        });
+    });
+
+    // Close Product Detail Modal
+    closeProductDetailBtn.addEventListener('click', function() {
+        productDetailModal.style.display = 'none';
+    });
+
+    // Wishlist button in Product Detail Modal
+    wishlistBtnModal.addEventListener('click', function() {
+        this.classList.toggle('active');
+        if (this.classList.contains('active')) {
+            this.innerHTML = '<i class="fas fa-heart"></i>';
+        } else {
+            this.innerHTML = '<i class="far fa-heart"></i>';
+        }
+        // Also update the state of the wishlist button on the product card
+        const productId = productDetailModal.dataset.productId;
+        const productCard = document.querySelector(`.product-card[data-product-id="${productId}"]`);
+        if (productCard) {
+            const cardWishlistBtn = productCard.querySelector('.wishlist-btn');
+            if (cardWishlistBtn) {
+                if (this.classList.contains('active')) {
+                    cardWishlistBtn.classList.add('active');
+                    cardWishlistBtn.innerHTML = '<i class="fas fa-heart"></i>';
+                } else {
+                    cardWishlistBtn.classList.remove('active');
+                    cardWishlistBtn.innerHTML = '<i class="far fa-heart"></i>';
+                }
+            }
+        }
+    });
+
+    // Add to Cart button in Product Detail Modal
+    addToCartModalBtn.addEventListener('click', function() {
+        // Use the productDetailModal itself as the element to extract data
+        addProductToCart(productDetailModal);
+        productDetailModal.style.display = 'none'; // Close modal after adding to cart
+    });
+
+    // Initial update of cart count on page load
+    updateCartCount();
+  </script>
+</body>
+</html>
